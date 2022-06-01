@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Stronglift</title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="item in items">
+                {{ item }}: <button @click="reps++">+1</button>
+            </li>
+        </ul>
+        <p v-if="reps > 4">Good workout!</p>
+        <p v-else-if="reps > 2">Almost there!</p>
+        <p v-else>Lets start!</p>
+        <input v-model="performanceRep" type="text" />
+        <p v-show="performanceRep.length > 0">Your current performance rep is {{ performanceRep }}</p>
+        <div>
+            <h3>Timer</h3>
+            <p style="border:1px solid black;">{{ timer }}</p>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="./app.js"></script>
+</html>
